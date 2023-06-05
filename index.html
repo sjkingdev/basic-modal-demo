@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>Modal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .container {
+        width: 60%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        height: 40px;
+        width: 120px
+    }
+
+    black {
+        background: black;
+        color: white;
+    }
+
+    black:hover {
+        background: grey;
+        color: black;
+    }
+
+    .modal {
+        z-index: 3;
+        display: none;
+        padding-top: 100px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        margin: auto;
+        background-color: #fff;
+        position: relative;
+        padding: 0;
+        outline: 0;
+        width: 70%;
+    }
+
+    .display-topright {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h2>Modal</h2>
+        <button onclick="modalOpen()" class="button black">Open Modal</button>
+
+        <div id="modalID" class="modal">
+
+            <div class="modal-content">
+                <span onclick="modalClose()" class="button display-topright">&times;</span>
+                <div class="container">
+
+                    <div>
+
+                        <h1>Put form snippet here</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function modalOpen() {
+        document.getElementById('modalID').style.display = 'block';
+    }
+
+    function modalClose() {
+        document.getElementById('modalID').style.display = 'none'
+    }
+</script>
+
+</html>
